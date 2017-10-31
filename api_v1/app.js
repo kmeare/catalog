@@ -2,7 +2,9 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 let db = require('./config/connection');
+
 let placeRouter = require('./routes/place');
+let promoRouter = require('./routes/promo');
 
 const port = 8000;
 
@@ -16,6 +18,7 @@ app.use(bodyParser.json());
 
 //use the place router
 app.use('/place', placeRouter);
+app.use('/promo', promoRouter);
 
 app.listen(port, function(err){
     if(err){

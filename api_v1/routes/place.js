@@ -13,12 +13,12 @@ router.get('/',function(req, res){
 
 
 router.get('/:id/promos',function(req, res){
-    Place.findById(req.params.id, function(err, place){
+    Place.findById(req.params.id).populate('promos').exec(function(err, place){
         if(err){
             res.status(500).send(err);
         }
         res.status(200).send(place);
-    });
+    })
 });
 
 
@@ -32,17 +32,27 @@ router.get('/:id',function(req,res){
 });
 
 router.post('/',function(req, res){
-    let place = new Place ({
-        name: req.body.name,
-        description: req.body.description,
-        promos: req.body.promos
+    var promo = new Promo({
+        name:'caca'
     });
-    place.save(function(err, place){
-        if(err){
-            res.status(500).send(err);
-        }
-        res.status(201).send(place);
-    });
+
+    promo.save(function(err){
+        var place = new Place ({
+            name: req.body.name,
+            description: req.body.description,
+            promos: promo._id
+        });
+
+        place.save(function(err, place){
+            if(err){
+                res.status(500).send(err);
+            }
+            res.status(201).send(place);
+        });
+
+    })
+    
+    
 });
 
 router.post('/:id/promos', function (req, res){

@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-let Schema = mongoose.Schema;
+const mongoose = require('mongoose'),
+      Schema = mongoose.Schema;
 
 
 var placeSchema = mongoose.Schema({
@@ -7,7 +7,8 @@ var placeSchema = mongoose.Schema({
     description: String,
     promos: [{type: Schema.Types.ObjectId, ref: 'Promo'}],
     address: String,
-    phone: String 
+    phone: String,
+    image: String 
     
 });
 
