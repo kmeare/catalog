@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+var cors = require('cors');
 let db = require('./config/connection');
 
 let placeRouter = require('./routes/place');
@@ -8,6 +9,8 @@ let promoRouter = require('./routes/promo');
 
 const port = 8000;
 
+//enable CORS
+app.use(cors({origin: '*'}))
 
 //parse applicaiton/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({extended: false}));
