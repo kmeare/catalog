@@ -19,7 +19,10 @@ export class PlacesProvider {
   }
 
   getPlaces(arg1,arg2) {
-    return this.http.get(`${this.apiURL}/place/${arg1}`).map((res : Response ) => res.json());
+    if(!arg2){
+      arg2 = '';
+    }
+    return this.http.get(`${this.apiURL}/place/${arg1}/${arg2}`).map((res : Response ) => res.json());
   }
 
   getHotels() {

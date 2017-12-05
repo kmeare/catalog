@@ -30,8 +30,8 @@ export class RestaurantsPage {
 
   openByFilterPage(){
     this.navCtrl.push('ByfilterPage',{
-      type: 'restaurant',
-      mode: 'Tipo de Comida'
+      section: 'restaurant',
+      type: 'type'
     })
   }
 
