@@ -11,6 +11,24 @@ router.get('/',function(req, res){
     });
 });
 
+router.get('/hotel',function(req, res){
+    Place.find({'type':'hotel'},function(err, places){
+        if(err){
+            res.status(500).send(err);
+        }
+        res.status(200).send(places);
+    });
+});
+
+router.get('/bar',function(req, res){
+    Place.find({'type':'bar'},function(err, places){
+        if(err){
+            res.status(500).send(err);
+        }
+        res.status(200).send(places);
+    });
+});
+
 
 router.get('/:id/promos',function(req, res){
     Place.findById(req.params.id).populate('promos').exec(function(err, place){

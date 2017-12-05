@@ -7,7 +7,7 @@ let db = require('./config/connection');
 let placeRouter = require('./routes/place');
 let promoRouter = require('./routes/promo');
 
-const port = 8000;
+const port = 8111;
 
 //enable CORS
 app.use(cors({origin: '*'}))

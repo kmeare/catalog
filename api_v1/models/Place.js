@@ -5,7 +5,7 @@ const mongoose = require('mongoose'),
 var placeSchema = mongoose.Schema({
     name: String,
     description: String,
-    promos: [{type: Schema.Types.ObjectId, ref: 'Promo'}],
+    promos: [],
     address: String,
     phone: String,
     image: String 
