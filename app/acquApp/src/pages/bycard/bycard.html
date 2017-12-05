@@ -1,0 +1,33 @@
+<!--
+  Generated template for the BycardPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="green-dark" align-title="center">
+    <ion-title text-aling="center" class="navbar-title">
+     Regresar
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="body-content">
+  <ion-card *ngFor="let place of places" (click)="openPlacePage(place._id)">
+    <img src="{{place.image}}"/>
+    <ion-card-content>
+      <ion-card-title>
+       {{place.name}}
+        </ion-card-title>
+      <p>
+        {{place.description}}
+      </p>
+      <div *ngIf="type == 'stars'">
+        <ion-icon *ngFor = "let star of [0,1,2]" name="star" role="img" class="icon icon-ios icon-ios-bright ion-ios-star star" aria-label="star"></ion-icon>        
+                      
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

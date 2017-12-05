@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="green-dark" align-title="center">
+    <ion-title text-aling="center" class="navbar-title">
+      Guía Turitica Culiacan 
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="body-content">
+  <div class="links-section">
+    <a class="link-container" (click)="homeNavigation(1)" >
+      <div class="square"></div>
+      <div class="link-txt">HOTELES</div>
+    </a>
+    <a class="link-container" (click)="homeNavigation(2)">
+      <div class="square"></div>
+      <div class="link-txt">RESTAURANTES</div>
+    </a>
+    <a class="link-container" (click)="homeNavigation(3)">
+      <div class="square"></div>
+      <div class="link-txt">BARES & ANTROS</div>
+    </a>
+    <a class="link-container" (click)="homeNavigation(4)">
+      <div class="square"></div>
+      <div class="link-txt">PASEOS</div>
+    </a>
+    <a class="link-container" (click)="homeNavigation(5)">
+      <div class="square"></div>
+      <div class="link-txt">SERVICIOS</div>
+    </a>
+  </div>
+  <div class="img-section">
+    <img class="img-acqu" src="../assets/imgs/aqcu.png" alt="">
+  </div>
+</ion-content>
