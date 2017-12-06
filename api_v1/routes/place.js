@@ -29,6 +29,15 @@ router.get('/restaurant',function(req, res){
     });
 });
 
+router.get('/restaurant/delivery',function(req, res){
+    Place.find({'type':'restaurant', 'delivery':'1'},function(err, places){
+        if(err){
+            res.status(500).send(err);
+        }
+        res.status(200).send(places);
+    });
+});
+
 router.get('/bar',function(req, res){
     Place.find({'type':'bar'},function(err, places){
         if(err){

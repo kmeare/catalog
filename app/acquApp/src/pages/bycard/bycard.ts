@@ -27,14 +27,14 @@ export class BycardPage {
   ionViewDidLoad() {
     this.type = this.navParams.get('type');
     this.section = this.navParams.data.section;
-
+    
   }
 
   getPlaceByArgs() {
 
-    this.PlacesProvider.getPlaces(this.navParams.data.section,this.type).subscribe((data)=>{
+    this.PlacesProvider.getPlaces(this.navParams.data.section,this.navParams.data.type).subscribe((data)=>{
       this.places = data;
-      console.log(this.places);
+
     });
   }
 
