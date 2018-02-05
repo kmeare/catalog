@@ -5,7 +5,7 @@
         "password": ""
     },
     "server": {
-        "port": 3000
+        "port": 10011
     },
     "app": {
         "layouts": true,

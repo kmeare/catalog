@@ -15,7 +15,7 @@
 
 <ion-content padding class="body-content">
   <ion-card *ngFor="let place of places" (click)="openPlacePage(place.id)">
-    <img src="{{place.image}}"/>
+    <img src="http://104.131.94.219:10012/public/upload/{{place.image}}"/>
     <ion-card-content>
       <ion-card-title>
        {{place.name}}
