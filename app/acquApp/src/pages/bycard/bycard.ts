@@ -31,7 +31,6 @@ export class BycardPage {
   }
 
   getPlaceByArgs() {
-<<<<<<< HEAD
     if(this.navParams.data.section == 'bar'){
       this.PlacesProvider.getPlaceBy2Cats(this.navParams.data.section, 'antro').subscribe((data)=>{
         return this.places = data[0].places;
@@ -42,12 +41,6 @@ export class BycardPage {
       if(this.navParams.data.type == 'delivery'){
         this.places = this.places.filter((x)=> x.delivery == 1);
       }
-=======
-
-    this.PlacesProvider.getPlaces(this.navParams.data.section,this.navParams.data.type).subscribe((data)=>{
-      this.places = data;
-
->>>>>>> 3448851faddf48e9147a7ef371b6ba0b35f1f4c7
     });
   }
 

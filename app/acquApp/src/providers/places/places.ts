@@ -18,16 +18,8 @@ export class PlacesProvider {
     console.log('Hello PlacesProvider Provider');
   }
 
-<<<<<<< HEAD
   getPlaces(arg1) {
     return this.http.get(`${this.apiURL}/place`).map((res : Response ) => res.json());
-=======
-  getPlaces(arg1,arg2) {
-    if(!arg2){
-      arg2 = '';
-    }
-    return this.http.get(`${this.apiURL}/place/${arg1}/${arg2}`).map((res : Response ) => res.json());
->>>>>>> 3448851faddf48e9147a7ef371b6ba0b35f1f4c7
   }
 
   getPlaceByCat(arg1){
