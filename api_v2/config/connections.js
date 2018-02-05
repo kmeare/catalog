@@ -48,6 +48,14 @@ module.exports.connections = {
     database: 'aqcu_db' //optional
   },
 
+  prodMysqlServer: {
+    adapter: 'sails-mysql',
+    host: 'localhost',
+    user: 'root', //optional
+    password: 'Alchemist5', //optional
+    database: 'aqcu_db' //optional
+  }
+
   /***************************************************************************
   *                                                                          *
   * MongoDB is the leading NoSQL database.                                   *
