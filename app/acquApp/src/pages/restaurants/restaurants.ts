@@ -24,21 +24,28 @@ export class RestaurantsPage {
 
   openMapPage(){
     this.navCtrl.push('MapPage',{
-      type: 'restaurant'
+      type: 'restaurante'
     })
   }
 
   openByFilterPage(){
     this.navCtrl.push('ByfilterPage',{
-      type: 'restaurant',
+      section: 'restaurante',
       mode: 'Tipo de Comida'
     })
   }
 
-  openByCardPage(section,type){
+  openByCardDelivery(){
     this.navCtrl.push('BycardPage',{
-      section: section,
-      type: type
+      section: 'restaurante',
+      type: 'delivery'
+    })
+  }
+
+  openByCard(){
+    this.navCtrl.push('BycardPage',{
+      section: 'restaurante',
+      type: 'basic'
     })
   }
 

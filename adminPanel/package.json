@@ -1,0 +1,9 @@
+{
+  "name": "adminPanel",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "express-admin": "^1.3.2"
+  }
+}

@@ -31,10 +31,16 @@ export class BycardPage {
   }
 
   getPlaceByArgs() {
-
-    this.PlacesProvider.getPlaces(this.navParams.data.section,this.type).subscribe((data)=>{
-      this.places = data;
-      console.log(this.places);
+    if(this.navParams.data.section == 'bar'){
+      this.PlacesProvider.getPlaceBy2Cats(this.navParams.data.section, 'antro').subscribe((data)=>{
+        return this.places = data[0].places;
+      });
+    }
+    this.PlacesProvider.getPlaceByCat(this.navParams.data.section).subscribe((data)=>{
+      this.places = data[0].places;
+      if(this.navParams.data.type == 'delivery'){
+        this.places = this.places.filter((x)=> x.delivery == 1);
+      }
     });
   }
 

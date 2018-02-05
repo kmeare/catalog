@@ -12,18 +12,26 @@ import { Response } from '@angular/http/src/static_response';
 @Injectable()
 export class PlacesProvider {
 
-  apiURL: string = "http://localhost:8111";
+  apiURL: string = "http://localhost:1337";
 
   constructor(public http: Http) {
     console.log('Hello PlacesProvider Provider');
   }
 
-  getPlaces(arg1,arg2) {
-    return this.http.get(`${this.apiURL}/place/${arg1}`).map((res : Response ) => res.json());
+  getPlaces(arg1) {
+    return this.http.get(`${this.apiURL}/place`).map((res : Response ) => res.json());
   }
 
-  getHotels() {
-    return this.http.get(`${this.apiURL}/place/hotels`).map((res : Response ) => res.json());
+  getPlaceByCat(arg1){
+    return this.http.get(`${this.apiURL}/category?name=${arg1}`).map((res : Response ) => res.json());
+  }
+
+  getPlaceBy2Cats(arg1,arg2){
+    return this.http.get(`${this.apiURL}/category?name=${arg1}&&name=${arg2}`).map((res : Response ) => res.json());
+  }
+
+  getWalks(){
+    return this.http.get(`${this.apiURL}/walk`).map((res : Response ) => res.json());
   }
 
   getPlaceById(id) {

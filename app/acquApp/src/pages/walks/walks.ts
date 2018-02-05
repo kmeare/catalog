@@ -22,4 +22,10 @@ export class WalksPage {
     console.log('ionViewDidLoad WalksPage');
   }
 
+  openByDate(){
+    this.navCtrl.push('GroupedPage',{
+      section: 'walk'
+    })
+  }
+
 }
