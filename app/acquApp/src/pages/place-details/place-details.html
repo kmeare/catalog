@@ -7,7 +7,7 @@
 <ion-header>
   <ion-navbar color="green-dark" align-title="center">
     <ion-title text-aling="center" class="navbar-title">
-     Regresar
+      Regresar
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -16,18 +16,21 @@
 <ion-content padding class="body-content">
   <div class="title">{{place.name}}</div>
   <div class="image">
-    <img src="{{place.image}}" alt="">
+    <img src="http://104.131.94.219:10012/{{place.image}}" alt="">
   </div>
   <ion-card>
     <ion-card-content>
       <div class="description">{{place.description}}</div>
-      <div class="phone"><ion-icon  name="phone" role="img" class="icon icon-ios icon-ios-bright ion-ios-call call" aria-label="call"></ion-icon>
-        <a href="tel:{{place.phone}}">{{place.phone}}</a>  
+      <div class="phone">
+        <ion-icon name="phone" role="img" class="icon icon-ios icon-ios-bright ion-ios-call call" aria-label="call"></ion-icon>
+        <a href="tel:{{place.phone}}">{{place.phone}}</a>
       </div>
-      <div class="location"><ion-icon  name="map" role="img" class="icon icon-ios icon-ios-bright ion-ios-map map" aria-label="map"></ion-icon> {{place.address}}</div>
-      <div class="schedule"><ion-icon  name="clock" role="img" class="icon icon-ios icon-ios-bright ion-ios-clock clock" aria-label="clock"></ion-icon> {{place.hours}}</div>
-    </ion-card-content>    
+      <div class="location">
+        <ion-icon name="map" role="img" class="icon icon-ios icon-ios-bright ion-ios-map map" aria-label="map"></ion-icon> {{place.address}}</div>
+      <div class="schedule">
+        <ion-icon name="clock" role="img" class="icon icon-ios icon-ios-bright ion-ios-clock clock" aria-label="clock"></ion-icon> {{place.hours}}</div>
+    </ion-card-content>
   </ion-card>
 
-  
+
 </ion-content>

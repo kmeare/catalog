@@ -7,7 +7,7 @@
 <ion-header>
   <ion-navbar color="green-dark" align-title="center">
     <ion-title text-aling="center" class="navbar-title">
-     Regresar
+      Regresar
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -15,17 +15,17 @@
 
 <ion-content padding class="body-content">
   <ion-card *ngFor="let place of places" (click)="openPlacePage(place.id)">
-    <img src="http://104.131.94.219:10012/public/upload/{{place.image}}"/>
+    <img src="http://104.131.94.219:10012/{{place.image}}" />
     <ion-card-content>
       <ion-card-title>
-       {{place.name}}
-        </ion-card-title>
+        {{place.name}}
+      </ion-card-title>
       <p>
         {{place.description}}
       </p>
-      <div *ngIf="type == 'stars'">
-        <ion-icon *ngFor = "let star of [0,1,2]" name="star" role="img" class="icon icon-ios icon-ios-bright ion-ios-star star" aria-label="star"></ion-icon>        
-                      
+      <div *ngIf="place.stars.length >=1 ">
+        <ion-icon *ngFor="let star of place?.stars" name="star" role="img" class="icon icon-ios icon-ios-bright ion-ios-star star"
+          aria-label="star"></ion-icon>
       </div>
     </ion-card-content>
   </ion-card>

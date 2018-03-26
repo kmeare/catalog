@@ -32,7 +32,7 @@ export class ByfilterPage {
 
   getPlaceByArgs() {
     
-    this.PlacesProvider.getPlaces(this.navParams.data.section,this.type).subscribe((data)=>{
+    this.PlacesProvider.getPlaces(this.navParams.data.section).subscribe((data)=>{
       this.places = data;
       console.log(this.places);
     });
