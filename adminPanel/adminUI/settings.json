@@ -391,6 +391,22 @@
                 }
             },
             {
+                "name": "image",
+                "verbose": "image",
+                "control": {
+                    "file": true
+                },
+                "type": "varchar(255)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
                 "name": "descripton",
                 "verbose": "descripton",
                 "control": {
