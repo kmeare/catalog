@@ -6,7 +6,6 @@
  */
 
 module.exports = {
-
   attributes: {
     name:{
       type:'string'
@@ -22,7 +21,9 @@ module.exports = {
     },
     date:{
       type: 'date'
+    },
+    isPermanent: {
+      type: 'string'
     }
   }
 };
-
