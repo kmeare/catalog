@@ -10,6 +10,9 @@ module.exports = {
     name:{
       type:'string'
     },
+    image:{
+      type: 'string'
+    },
     descripton:{
       type:'text'
     },
