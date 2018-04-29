@@ -62,10 +62,15 @@ export class MapPage {
       this.PlacesProvider.getPlaces(this.navParams.data.section).subscribe((data)=>{
         this.places = data;
         for(var i=0; i<this.places.lenght; i++){
-          new google.maps.Marker({
+          var infowindow = new google.maps.InfoWindow({
+            content: this.places[i].name
+          });
+          let marker = new google.maps.Marker({
             position: {lat: this.places[i].lat, lng: this.places[i].lon},
-            map: this.map,
-            title: 'Hello World!'
+            map: this.map
+          });
+          marker.addListener('click', function(){
+            infowindow.open(this.map, marker);
           });
         }
         
