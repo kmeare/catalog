@@ -34,7 +34,6 @@ export class ByfilterPage {
     
     this.PlacesProvider.getPlaces(this.navParams.data.section).subscribe((data)=>{
       this.places = data;
-      console.log(this.places);
     });
   }
 

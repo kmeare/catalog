@@ -19,7 +19,7 @@ export class PlacesProvider {
   }
 
   getPlaces(arg1) {
-    return this.http.get(`${this.apiURL}/place`).map((res : Response ) => res.json());
+    return this.http.get(`${this.apiURL}/place/?sort=name`).map((res : Response ) => res.json());
   }
 
   getPlaceByCat(arg1){

@@ -24,7 +24,9 @@ export class MapPage {
     public geolocation: Geolocation,
     public PlacesProvider: PlacesProvider
 
-  ) {}
+  ) {
+    this.places = [];
+  }
 
   ionViewDidLoad() {
     this.section = this.navParams.get("section");
@@ -35,7 +37,10 @@ export class MapPage {
   getPosition(){
     this.geolocation.getCurrentPosition()
     .then(response => {
-      this.loadMap(response);
+      this.PlacesProvider.getPlaces(this.navParams.data.section).subscribe((data)=>{
+        this.places = data;
+        this.loadMap(response);
+      });
     })
     .catch(error =>{
       console.log(error);
@@ -59,19 +64,20 @@ export class MapPage {
     });
 
     google.maps.event.addListenerOnce(this.map, 'idle', () => {
-      this.PlacesProvider.getPlaces(this.navParams.data.section).subscribe((data)=>{
-        this.places = data;
+      
         for(var i=0; i<this.places.lenght; i++){
+          var infowindow = new google.maps.InfoWindow({
+            content: this.places[i].name
+          });
           new google.maps.Marker({
             position: {lat: this.places[i].lat, lng: this.places[i].lon},
-            map: this.map,
-            title: 'Hello World!'
+            map: this.map
+          }).addListener('click', function(){
+            infowindow.open(this.map, this.places[i].name);
           });
         }
         
       });
-      
       mapEle.classList.add('show-map');
-    });
   }
 }
