@@ -1,0 +1,15 @@
+{
+    "mysql": {
+        "database": "gourmete_db",
+        "user": "gguser",
+        "password": "Alchemist5"
+    },
+    "server": {
+        "port": 10012
+    },
+    "app": {
+        "layouts": true,
+        "themes": true,
+        "languages": true
+    }
+}
