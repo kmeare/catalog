@@ -1,3 +1,4 @@
+
 /**
  * Connections
  * (sails.config.connections)
@@ -44,7 +45,7 @@ module.exports.connections = {
     adapter: 'sails-mysql',
     host: 'localhost',
     user: 'root', //optional
-    password: '', //optional
+    password: 'Alchemist5', //optional
     database: 'aqcu_db' //optional
   },
 

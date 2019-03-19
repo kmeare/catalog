@@ -702,7 +702,10 @@
                 "verbose": "isPermanent",
                 "control": {
                     "radio": true,
-                    "options": ["True","False"]
+                    "options": [
+                        "True",
+                        "False"
+                    ]
                 },
                 "type": "varchar(255)",
                 "allowNull": true,

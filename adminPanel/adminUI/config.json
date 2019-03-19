@@ -2,7 +2,7 @@
     "mysql": {
         "database": "aqcu_db",
         "user": "root",
-        "password": ""
+        "password": "Alchemist5"
     },
     "server": {
         "port": 10011

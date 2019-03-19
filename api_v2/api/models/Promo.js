@@ -6,7 +6,6 @@
  */
 
 module.exports = {
-
   attributes: {
     name:{
       type:'string'
@@ -16,6 +15,9 @@ module.exports = {
     },
     descripton:{
       type:'text'
+    },
+    image:{
+     type:'text'
     },
     valid:{
       type:'string'
