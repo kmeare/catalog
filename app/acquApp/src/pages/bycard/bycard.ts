@@ -31,6 +31,22 @@ export class BycardPage {
     this.type = this.navParams.get("type");
     this.section = this.navParams.data.section;
   }
+  dynamicSort(property) {
+    var sortOrder = 1;
+
+    if(property[0] === "-") {
+        sortOrder = -1;
+        property = property.substr(1);
+    }
+
+    return function (a,b) {
+        if(sortOrder == -1){
+            return b[property].localeCompare(a[property]);
+        }else{
+            return a[property].localeCompare(b[property]);
+        }        
+    }
+  }
 
   getPlaceByArgs = async () => {
     if (this.navParams.data.section == "bar") {
@@ -44,7 +60,7 @@ export class BycardPage {
             (x, index) => index
           );
         });
-        return (this.places = data[0].places);
+        return (this.places = data[0].places.sort(this.dynamicSort('name')));
       });
     }
     this.PlacesProvider.getPlaceByCat(
@@ -56,7 +72,7 @@ export class BycardPage {
           (x, index) => index
         );
       });
-      this.places = data[0].places;
+      this.places = data[0].places.sort(this.dynamicSort('name'));
       if (this.navParams.data.type == "delivery") {
         this.places = this.places.filter(x => x.delivery == 1);
       }

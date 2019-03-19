@@ -25,8 +25,8 @@
         <ion-icon name="phone" role="img" class="icon icon-ios icon-ios-bright ion-ios-call call" aria-label="call"></ion-icon>
         <a href="tel:{{place.phone}}">{{place.phone}}</a>
       </div>
-      <div class="location">
-        <ion-icon name="map" role="img" class="icon icon-ios icon-ios-bright ion-ios-map map" aria-label="map"></ion-icon> {{place.address}}</div>
+      <div class="location" (click)="openMaps(place.lat, place.lon)">
+        <ion-icon name="map" role="img" class="icon icon-ios icon-ios-bright ion-ios-map map" aria-label="map" ></ion-icon> {{place.address}}</div>
       <div class="schedule">
         <ion-icon name="clock" role="img" class="icon icon-ios icon-ios-bright ion-ios-clock clock" aria-label="clock"></ion-icon> {{place.hours}}</div>
         <h3>Promos:</h3>

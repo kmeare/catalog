@@ -19,15 +19,15 @@ export class PlacesProvider {
   }
 
   getPlaces(arg1) {
-    return this.http.get(`${this.apiURL}/place/?sort=name`).map((res : Response ) => res.json());
+    return this.http.get(`${this.apiURL}/place?sort=name`).map((res : Response ) => res.json());
   }
 
   getPlaceByCat(arg1){
-    return this.http.get(`${this.apiURL}/category?name=${arg1}`).map((res : Response ) => res.json());
+    return this.http.get(`${this.apiURL}/category?name=${arg1}&&sort=name`).map((res : Response ) => res.json());
   }
 
   getPlaceBy2Cats(arg1,arg2){
-    return this.http.get(`${this.apiURL}/category?name=${arg1}&&name=${arg2}`).map((res : Response ) => res.json());
+    return this.http.get(`${this.apiURL}/category?name=${arg1}&&name=${arg2}&&sort=name`).map((res : Response ) => res.json());
   }
 
   getWalks(){
