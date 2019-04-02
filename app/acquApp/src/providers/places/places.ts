@@ -12,7 +12,7 @@ import { Response } from '@angular/http/src/static_response';
 @Injectable()
 export class PlacesProvider {
 
-  apiURL: string = "https://xnxd5a.dev:10015";
+  apiURL: string = "http://138.68.11.116:10015";
 
   constructor(public http: Http) {
     console.log('Hello PlacesProvider Provider');
